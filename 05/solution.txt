@@ -1,0 +1,11 @@
+1. ADM - if these get anything depends on the destination bits
+2. What gets to alu depends on the a bit of before the c computation: either D and M or D and A
+3. If reset is 0 nothing is reset in PC, if JMP are not all zero then need to perform computation to determine whether jump is needed, otherwise just inc.
+4. ALU apparently gets the 6 control bits from the c instruction "cccccc"
+5. Not sure about the very first c before the A register
+6. If it's a C instruction - the load bit in a register should be 0!
+
+--
+1. Take the destination bit, then go through a mux using the first bit and select the destination one
+2. Even a is important for ALU - for PC
+3. If instruction starts with 1 but A is destination - write to A
